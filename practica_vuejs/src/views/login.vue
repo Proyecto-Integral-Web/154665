@@ -1,7 +1,11 @@
 <template>
-  <div class="home">
-    <h1>Bienvenido</h1>
-    <LoginForm></LoginForm>
+  <div class="login container">
+    <div class="card p-3">
+      <h1>Bienvenido</h1>
+      <LoginForm>
+
+      </LoginForm>
+    </div>
   </div>
 </template>
 
