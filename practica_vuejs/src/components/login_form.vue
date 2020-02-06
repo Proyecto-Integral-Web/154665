@@ -2,11 +2,11 @@
     <section>
         <div class="col col-6 col-lg-4">
             <h3>Soy log in</h3>
-            <input type="text" class="form-control mb-2" placeholder="Username">
+            <input type="text" class="form-control mb-2" placeholder="Username" v-model="user.email">
 
-            <input type="password" class="form/control mb-2" placeholder="Password">
-
-            <button class="btn btn-darkblue btn/block">
+            <input type="password" class="form/control mb-2" placeholder="Password" v-model="user.password">
+            
+            <button class="btn btn-darkblue btn/block" @click="login">
             <button class="btn  btn/block">
             <div clas="form-group">
                 <div class="row">
@@ -20,7 +20,25 @@
 <script lang="js">
 export default{
     name: 'LoginForm'
-}
+    }
+    data(){
+        return{
+            user:{
+                email:'',
+                password:''
+            }
+        }
+    },
+    mounted(){
+
+    },
+    methods:{
+        login(){
+            setTimeout(() => {
+                this.$router.push({name: 'about'})
+            }, 1000)
+        }
+    }
 </script>
 <style lang="scss">
 .btn-darkblue{
