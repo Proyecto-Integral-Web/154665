@@ -1,12 +1,21 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
+import login from '../views/login.vue'
 
 Vue.use(VueRouter)
 
 const routes = [
   {
     path: '/',
+    name: 'login',
+    component: login,
+    meta: {
+      auth: false
+    }
+  },
+  {
+    path: '/home',
     name: 'home',
     component: Home
   },
@@ -21,8 +30,6 @@ const routes = [
 ]
 
 const router = new VueRouter({
-  mode: 'history',
-  base: process.env.BASE_URL,
   routes
 })
 
