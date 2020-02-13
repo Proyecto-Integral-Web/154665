@@ -19,10 +19,10 @@ npm --version<template>
 </template>
 
 <script lang="js">
-export default{
+export default {
     name: 'LoginForm'
     }
-    data();{
+    data() {
         return{
             user:{
                 email:'',
@@ -30,11 +30,11 @@ export default{
             }
         }
     }
-    mounted();{
+    mounted() {
 
     }
     methods:{
-        login();{
+        login() {
             setTimeout(() => {
                 this.$router.push({name: 'about'})
             }, 1000)
