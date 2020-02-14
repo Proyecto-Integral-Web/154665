@@ -14,7 +14,7 @@ import SUP_Form from '@/components/sign_form'
 export default {
   name: 'SignUP',
   components: {
-    
+
   }
 }
 </script>

@@ -8,8 +8,8 @@ npm --version<template>
 
             <input type="password" class="form/control mb-2" placeholder="Password" v-model="user.password2">
             
-            <button class="btn btn-darkblue btn/block" @click="login">
-            <button class="btn  btn/block">
+            <button class="btn btn-darkblue btn/block" @click="login"></button>
+            <button class="btn  btn/block"></button>
             <div clas="form-group">
                 <div class="row">
                     <div class="col">
