@@ -10,7 +10,7 @@
 </template>
 
 <script lang="js">
-// import SUP_Form from '@/components/sign_form'
+import Sup_Form from '@/components/sign_form'
 export default {
   name: 'SignUP',
   components: {
