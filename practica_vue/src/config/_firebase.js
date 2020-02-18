@@ -1,13 +1,13 @@
 import * as firebase from 'firebase'
 
 var firebaseConfig = {
-  apiKey: 'api-key',
-  authDomain: 'project-id.firebaseapp.com',
-  databaseURL: 'https://project-id.firebaseio.com',
-  projectId: 'project-id',
-  storageBucket: 'project-id.appspot.com',
-  messagingSenderId: 'sender-id',
-  appId: 'app-id',
+  apiKey: "AIzaSyDZDjlQASLCmZCim9gD20tsojCvbHVzzkI",
+  authDomain: "clase-practica.firebaseapp.com",
+  databaseURL: "https://clase-practica.firebaseio.com",
+  projectId: "clase-practica",
+  storageBucket: "clase-practica.appspot.com",
+  messagingSenderId: "209551456090",
+  appId: "1:209551456090:web:ba94d093635848a352a563",
   measurementId: 'G-measurement-id'
 }
 
