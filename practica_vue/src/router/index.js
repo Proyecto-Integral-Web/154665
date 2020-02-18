@@ -9,7 +9,7 @@ Vue.use(VueRouter)
 const routes = [
   {
     path: '/',
-    name: 'login',
+    name: 'sgnup',
     component: sgnup,
     meta: {
       auth: false
@@ -30,7 +30,7 @@ const routes = [
   },
   {
     path: '/login',
-    name: 'sgnup',
+    name: 'login',
     component: login
   }
 ]

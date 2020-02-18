@@ -1,14 +1,14 @@
 npm --version<template>
     <section>
-        <div class="col col-4 col-lg-6">
-            <h3>Soy log in</h3>
-            <input type="text" class="form-control mb-2 col-4 col-lg-6" placeholder="Username" v-model="user.email">
+        <div class="col-6 mx-auto">
+            <h6>Ingrese sus datos</h6>
+            <input type="text" class="form-control mb-2 col" placeholder="Username" v-model="user.email">
 
-            <input type="text" class="form-control mb-2 col-4 col-lg-6" placeholder="Password" v-model="user.password">
+            <input type="text" class="form-control mb-2 col" placeholder="Password" v-model="user.password">
 
-            <button class="btn btn-darkblue btn/block col-5 col-lg-4" @click="login">Ingresar</button>
+            <button class="btn btn-dark btn-block col-10 mx-auto" @click="login">Ingresar</button>
 
-            <button class="btn  btn/block col-4 col-lg-4" @click="goToSign">No tengo cuenta</button>
+            <button class="btn  btn-block" @click="goToSign">No tengo cuenta</button>
             <div clas="form-group">
                 <div class="row">
                     <div class="col">

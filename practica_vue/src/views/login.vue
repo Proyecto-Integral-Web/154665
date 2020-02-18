@@ -1,7 +1,7 @@
 <template>
   <div class="login container">
     <div class="card p-3">
-      <h1>Bienvenido</h1>
+      <h1>Bienvenido de nuevo</h1>
       <LoginForm></LoginForm>
     </div>
   </div>
