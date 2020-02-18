@@ -1,6 +1,6 @@
 npm --version<template>
     <section>
-        <div class="col-6 mx-auto">
+        <div class="col-10 col-sm-6 mx-auto">
             <h6>Llene el formulario de registro</h6>
             <input type="text" class="form-control mb-2 col " placeholder="Username" v-model="user.nombre">
 
@@ -23,7 +23,7 @@ npm --version<template>
     </section>
 </template>
 <script lang="js">
-// import Auth from '@/config/auth.js'
+import Auth from '@/config/auth.js'
 export default {
   name: 'SupForm',
   data () {
@@ -45,13 +45,13 @@ export default {
         email: 'EstoEsLocal'
       }
       if (user.password === user.password2) {
-        // Auth.signUp(this.user)
+        Auth.signUp(this.user)
+        setTimeout(() => {
+          this.$router.push({ name: 'about' })
+        }, 500)
       } else {
         console.console.log('Se requiere que las contraseñas coincidan')
       }
-      setTimeout(() => {
-        this.$router.push({ name: 'about' })
-      }, 1000)
     },
     goToLogin () {
       this.$router.push({ name: 'login' })

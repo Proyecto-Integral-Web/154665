@@ -11,7 +11,7 @@ var firebaseConfig = {
   measurementId: 'G-measurement-id'
 }
 
-firebase.initializeApp(firebaseConfig)
+// firebase.initializeApp(firebaseConfig)
 
 var fireApp = firebase.initializeApp(firebaseConfig)
 

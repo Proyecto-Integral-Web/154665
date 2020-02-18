@@ -1,10 +1,10 @@
 npm --version<template>
     <section>
-        <div class="col-6 mx-auto">
+        <div class="col-10 col-sm-6 mx-auto">
             <h6>Ingrese sus datos</h6>
             <input type="text" class="form-control mb-2 col" placeholder="Username" v-model="user.email">
 
-            <input type="text" class="form-control mb-2 col" placeholder="Password" v-model="user.password">
+            <input type="password" class="form-control mb-2 col" placeholder="Password" v-model="user.password">
 
             <button class="btn btn-dark btn-block col-10 mx-auto" @click="login">Ingresar</button>
 
@@ -20,7 +20,7 @@ npm --version<template>
 </template>
 
 <script lang="js">
-
+import Auth from '@/config/auth.js'
 export default {
   name: 'LoginForm',
   data () {
@@ -32,31 +32,26 @@ export default {
     }
   },
   beforeCreate () {
-    console.log(`Estoy en beforecreated ${this.user}`)
   },
   created () {
-    console.log(`Estoy en created ${this.user}`)
   },
   mounted () {
-    console.log(`Estoy en mounted ${this.user}`)
-    console.log(`Estoy en ${this.$route.name}`)
     // this.login()
-    // Auth.singUp(this.user)
+    Auth.singUp(this.user)
   },
   methods: {
     login () {
       // Esta variable es de uso local de nuestro metodo.
-      let user = {
-        email: 'esto es local'
-      }
-      console.log('soy el login')
-      console.log('User local' + user.email)
+      /* let user = {
+        email:
+      } */
+      console.log('User local' + this.user.email)
       console.log('User from data:' + this.user.email)
       console.log(this.user.password)
       setTimeout(() => {
         // Luego de iniciar sesión nos envia a la pagina about
         this.$router.push({ name: 'about' })
-      }, 1000)
+      }, 500)
     },
     goToSign () {
       this.$router.push({ name: 'sgnup' })
