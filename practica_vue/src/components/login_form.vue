@@ -48,9 +48,10 @@ export default {
       console.log('User local' + this.user.email)
       console.log('User from data:' + this.user.email)
       console.log(this.user.password)
+      auth.login(this.user)
       setTimeout(() => {
         // Luego de iniciar sesión nos envia a la pagina about
-        this.$router.push({ name: 'about' })
+        // this.$router.push({ name: 'about' })
       }, 500)
     },
     goToSign () {
