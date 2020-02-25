@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import login from '../views/login.vue'
 import sgnup from '../views/SignUP.vue'
+import perfil from '../views/profile.vue'
 
 Vue.use(VueRouter)
 
@@ -35,6 +36,11 @@ const routes = [
     path: '/login',
     name: 'login',
     component: login
+  },
+  {
+    path: '/perfil',
+    name: 'perfil',
+    component: perfil
   }
 ]
 

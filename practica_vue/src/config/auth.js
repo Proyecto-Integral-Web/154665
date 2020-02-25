@@ -2,13 +2,10 @@ import fireApp from './_firebase'
 import router from '@/router'
 export default {
   login (data) {
-    fireApp.auth().signInWithEmailAndPassword(data.email,data.password).then(
-      (result) => {
-        console.log(user.email + " ingresó")
-        router.push({ name: 'about' })
-      }).catch((err) => {
-        console.table(err)
-      })
+    fireApp.auth().signInWithEmailAndPassword(data.email, data.password).then((result) => {
+      console.log(result)
+      router.push({ name: 'perfil' })
+    }).catch((err) => { console.table(err) })
   },
   signUp (data) {
     if (data.nombre === '' || data.email === '' || data.password === '') {
@@ -33,8 +30,15 @@ export default {
     }
     return null
   },
-  logOut(){
+  logOut () {
     fireApp.auth().signOut()
-    router.push({ name: 'login'})
+    router.push({ name: 'login' })
+  },
+  usuarioInfo () {
+    return {
+      uNom: fireApp.user.displayName,
+      uCor: fireApp.user.email,
+      uTel: fireApp.user.email
+    }
   }
 }

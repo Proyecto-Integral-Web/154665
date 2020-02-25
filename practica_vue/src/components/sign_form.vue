@@ -47,7 +47,7 @@ export default {
       if (user.password === user.password2) {
         Auth.signUp(this.user)
         setTimeout(() => {
-          this.$router.push({ name: 'about' })
+          this.$router.push({ name: 'perfil' })
         }, 500)
       } else {
         console.console.log('Se requiere que las contraseñas coincidan')

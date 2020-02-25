@@ -7,13 +7,17 @@ import Auth from './config/auth'
 
 import 'bootstrap/scss/bootstrap.scss'
 Vue.config.productionTip = false
-router.beforeEach((to, from, next) => {
+router.beforeEach(async (to, from, next) => {
   if (to.meta.auth) {
     console.log('Necesita permisos para entrar')
-    if (Auth.chckUser()) {
-      next()
+    let user = await Auth.chckUser()
+    if (user == null) {
+      next({
+        name: 'login'
+      })
+      return
     }
-    router.push({ name: 'login' })
+    next()
   }
   next()
 })
