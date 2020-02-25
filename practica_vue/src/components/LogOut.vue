@@ -9,6 +9,7 @@ npm --version<template>
 
 <script lang="js">
 // import Auth from '@/config/auth.js'
+import Auth from '@/config/auth.js'
 export default {
   name: 'logOut',
   mounted () {
@@ -16,7 +17,7 @@ export default {
   },
   methods: {
     out () {
-      this.$router.push({ name: 'login' })
+      return Auth.logOut()
     }
   }
 }
