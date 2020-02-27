@@ -48,7 +48,18 @@ export default {
       console.log('User local' + this.user.email)
       console.log('User from data:' + this.user.email)
       console.log(this.user.password)
-      auth.login(this.user)
+      Auth.login(this.user).catch(function error () {
+        var codigoError = error.code
+        var mensage = error.message
+        switch (codigoError) {
+          case 'auth/user-not-found':
+          case 'auth/wrong-password':
+            alert('Correo o contraseña incorrectos')
+            break
+          default:
+            console.log(mensage)
+        }
+      })
       setTimeout(() => {
         // Luego de iniciar sesión nos envia a la pagina about
         // this.$router.push({ name: 'about' })

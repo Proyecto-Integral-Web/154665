@@ -1,11 +1,11 @@
 import fireApp from './_firebase'
 import router from '@/router'
 export default {
-  login (data) {
-    fireApp.auth().signInWithEmailAndPassword(data.email, data.password).then((result) => {
+  async login (data) {
+    await fireApp.auth().signInWithEmailAndPassword(data.email, data.password).then((result) => {
       console.log(result)
       router.push({ name: 'perfil' })
-    }).catch((err) => { console.table(err) })
+    }).catch((err) => { return Promise.reject })
   },
   signUp (data) {
     if (data.nombre === '' || data.email === '' || data.password === '') {
@@ -23,7 +23,7 @@ export default {
     })
     console.log(data)
   },
-  chckUser () {
+  async chckUser () {
     let user = fireApp.auth().currentUser
     if (user) {
       return user
