@@ -4,7 +4,7 @@ import './registerServiceWorker'
 import router from './router'
 import store from './store'
 import Auth from './config/auth'
-
+import 'animate.css'
 import 'bootstrap/scss/bootstrap.scss'
 Vue.config.productionTip = false
 router.beforeEach(async (to, from, next) => {

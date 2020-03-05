@@ -5,7 +5,7 @@ export default {
     await fireApp.auth().signInWithEmailAndPassword(data.email, data.password).then((result) => {
       console.log(result)
       router.push({ name: 'perfil' })
-    }).catch((err) => { return Promise.reject })
+    }).catch((err) => { return Promise.reject(err) })
   },
   signUp (data) {
     if (data.nombre === '' || data.email === '' || data.password === '') {

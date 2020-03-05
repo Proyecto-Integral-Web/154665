@@ -2,9 +2,14 @@ npm --version<template>
     <section>
         <div class="col-10 col-sm-6 mx-auto">
             <h6>Ingrese sus datos</h6>
-            <input type="text" class="form-control mb-2 col" placeholder="Username" v-model="user.email">
+            <AlertsComponent>
+              :error="swError"
+              :message="error"
+              :code="codigoError"
+            </AlertsComponent>
+            <input type="text" class="form-control mb-2 col" placeholder="Username" v-model="user.email" @keypress="swError=false">
 
-            <input type="password" class="form-control mb-2 col" placeholder="Password" v-model="user.password">
+            <input type="password" class="form-control mb-2 col" placeholder="Password" v-model="user.password" @keypress="swError=false">
 
             <button class="btn btn-dark btn-block col-10 mx-auto" @click="login">Ingresar</button>
 
@@ -21,10 +26,14 @@ npm --version<template>
 
 <script lang="js">
 import Auth from '@/config/auth.js'
+import AlertComponent from '@/Helpers/Alerts.js'
 export default {
   name: 'LoginForm',
   data () {
     return {
+      swError: false,
+      error: '',
+      codigoError: '', 
       user: {
         email: '',
         password: ''
@@ -45,23 +54,24 @@ export default {
       /* let user = {
         email:
       } */
-      console.log('User local' + this.user.email)
-      console.log('User from data:' + this.user.email)
-      console.log(this.user.password)
+      // console.log('User local' + this.user.email)
+      // console.log('User from data:' + this.user.email)
+      // console.log(this.user.password)
       Auth.login(this.user).catch(function error () {
-        var codigoError = error.code
-        var mensage = error.message
-        switch (codigoError) {
-          case 'auth/user-not-found':
-          case 'auth/wrong-password':
-            alert('Correo o contraseña incorrectos')
-            break
-          default:
-            console.log(mensage)
-        }
+        this.swError = true
+        this.error = error.message
+        this.codigoError = error.code
+        // switch (codigoError) {
+        //   case 'auth/user-not-found':
+        //   case 'auth/wrong-password':
+        //     console.log('Correo o contraseña incorrectos')
+        //     document.getElementById('usE').class += 'alert-danger'
+        //     break
+        //   default:
+        //     console.log(mensage)
+        // } 
       })
       setTimeout(() => {
-        // Luego de iniciar sesión nos envia a la pagina about
         // this.$router.push({ name: 'about' })
       }, 500)
     },
