@@ -4,6 +4,7 @@ import Home from '../views/Home.vue'
 import login from '../views/login.vue'
 import sgnup from '../views/SignUP.vue'
 import perfil from '../views/profile.vue'
+import partida from '../views/juego.vue'
 
 Vue.use(VueRouter)
 

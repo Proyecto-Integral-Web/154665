@@ -26,7 +26,7 @@ npm --version<template>
 
 <script lang="js">
 import Auth from '@/config/auth.js'
-import AlertComponent from '@/Helpers/Alerts.js'
+import AlertComponent from '/Helpers/Alerts.js'
 export default {
   name: 'LoginForm',
   data () {
