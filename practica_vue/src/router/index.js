@@ -41,6 +41,11 @@ const routes = [
     path: '/perfil',
     name: 'perfil',
     component: perfil
+  },
+  {
+    path: '/juego-1/:no_partida',
+    name: 'partida',
+    component: partida
   }
 ]
 
