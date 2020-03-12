@@ -3,7 +3,6 @@
     <h1>This is an about page</h1>
     <section>
         <div class="col col-sm-6 arena"></div>
-        <div class="col col-sm-6 arena"></div>
 
         <div class=" row col col-sm-6">
           <div class="col-6 mx-auto opciones">
@@ -20,7 +19,7 @@
 <script lang="js">
 export default {
   name: 'Arena',
-  props:
+  props: ['userOpcion'],
   data () {
     return {
       options: {

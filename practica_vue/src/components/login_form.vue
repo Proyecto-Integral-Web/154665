@@ -2,11 +2,11 @@ npm --version<template>
     <section>
         <div class="col-10 col-sm-6 mx-auto">
             <h6>Ingrese sus datos</h6>
-            <AlertsComponent>
+            <Alerts-Component>
               :error="swError"
               :message="error"
               :code="codigoError"
-            </AlertsComponent>
+            </Alerts-Component>
             <input type="text" class="form-control mb-2 col" placeholder="Username" v-model="user.email" @keypress="swError=false">
 
             <input type="password" class="form-control mb-2 col" placeholder="Password" v-model="user.password" @keypress="swError=false">
@@ -26,17 +26,21 @@ npm --version<template>
 
 <script lang="js">
 import Auth from '@/config/auth.js'
-import AlertComponent from '/Helpers/Alerts.js'
+import AlertComponent from './Helpers/Alerts'
 export default {
   name: 'LoginForm',
+  components: {
+    AlertComponent
+  },
   data () {
     return {
       swError: false,
       error: '',
-      codigoError: '', 
+      codigoError: '',
       user: {
         email: '',
-        password: ''
+        password: '',
+        nombre: 'Test'
       }
     }
   },
@@ -57,7 +61,7 @@ export default {
       // console.log('User local' + this.user.email)
       // console.log('User from data:' + this.user.email)
       // console.log(this.user.password)
-      Auth.login(this.user).catch(function error () {
+      Auth.login(this.user).catch(error => {
         this.swError = true
         this.error = error.message
         this.codigoError = error.code
@@ -69,7 +73,7 @@ export default {
         //     break
         //   default:
         //     console.log(mensage)
-        // } 
+        // }
       })
       setTimeout(() => {
         // this.$router.push({ name: 'about' })

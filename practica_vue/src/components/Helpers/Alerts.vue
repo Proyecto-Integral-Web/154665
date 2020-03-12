@@ -1,17 +1,18 @@
 <template>
-    <section v-if="error">
-        <div clsass = "alert alert-danger" :class="code=='auth/invalid-email'?'alert-warning:'alert-danger">
-            {{message}}
+    <section>
+        <div class="alert animated tada" :class="tipo">
+          {{message}}
+        </div>
     </section>
 </template>
 <script lang="js">
 export default {
   name: 'AlertComponent',
-  props: ['error','code','mesagge']
+  props: ['error', 'code', 'mesagge'],
   data () {
-      return {
-          tipo: 'alert-success'
-      }
+    return {
+      tipo: 'alert-success'
+    }
   },
   mounted () {
     switch (this.code) {
