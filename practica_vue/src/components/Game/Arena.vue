@@ -20,6 +20,7 @@
 <script lang="js">
 export default {
   name: 'Arena',
+  props:
   data () {
     return {
       options: {

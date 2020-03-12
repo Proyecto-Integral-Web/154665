@@ -6,6 +6,11 @@ import store from './store'
 import Auth from './config/auth'
 import 'animate.css'
 import 'bootstrap/scss/bootstrap.scss'
+import {
+  firestorePlugin
+} from 'vuefire'
+
+Vue.use(firestorePlugin)
 Vue.config.productionTip = false
 router.beforeEach(async (to, from, next) => {
   if (to.meta.auth) {
