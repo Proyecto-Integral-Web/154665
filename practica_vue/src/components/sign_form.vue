@@ -12,6 +12,8 @@ npm --version<template>
 
             <button class="btn btn-dark btn-block col-10 mx-auto" @click="login">Registrarse</button>
 
+            <button class="btn btn-dark btn-block col-10 mx-auto" @click="juego">Registrarse</button>
+
             <button class="btn  btn-block" @click="goToLogin">Ya tengo cuenta</button>
             <div clas="form-group">
                 <div class="row">
@@ -55,6 +57,9 @@ export default {
     },
     goToLogin () {
       this.$router.push({ name: 'login' })
+    },
+    juego () {
+      this.$router.push({ name: 'partida' })
     }
   }
 }

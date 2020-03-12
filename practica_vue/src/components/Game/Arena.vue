@@ -1,9 +1,10 @@
 <template>
   <div class="about logout">
-    <h1>This is an about page</h1>
+    <h1></h1>
     <section>
-        <div class="col col-sm-6 arena"></div>
-
+        <div class="col col-sm-6 arena row">
+          <h1>{{options[userOpcion]}}</h1>
+        </div>
         <div class=" row col col-sm-6">
           <div class="col-6 mx-auto opciones">
             <div class="row">
@@ -23,9 +24,9 @@ export default {
   data () {
     return {
       options: {
-        p: '✊',
-        pp: '✋',
-        t: '✌'
+        p: '✊ Piedra',
+        pp: '✋ Papel',
+        t: '✌ Tijeras'
       }
     }
   },
@@ -41,5 +42,14 @@ export default {
 .arena{
     text-size-adjust: 72px;
     background-color: grey;
+}
+.opciones {
+  background: grey;
+  .opcion {
+    cursor: pointer;
+    &:hover {
+      background: darkgray;
+    }
+  }
 }
 </style>

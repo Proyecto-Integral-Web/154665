@@ -26,12 +26,12 @@ npm --version<template>
 
 <script lang="js">
 import Auth from '@/config/auth.js'
-import AlertComponent from './Helpers/Alerts'
+// import AlertComponent from './Helpers/Alerts'
 export default {
   name: 'LoginForm',
-  components: {
-    AlertComponent
-  },
+  // components: {
+  //   AlertComponent
+  // },
   data () {
     return {
       swError: false,

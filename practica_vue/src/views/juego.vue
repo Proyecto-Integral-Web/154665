@@ -2,6 +2,18 @@
   <div class="about logout">
     <h1>This is an about page</h1>
     <section>
+        <button
+            class="btn btn-success mb-2"
+            @click="crearPartida"
+          >
+          Nueva Partida
+        </button>
+        <button
+          class="btn btn-success mb-2"
+          @click="obtenerPartida"
+        >
+          Nueva Partida
+        </button>
         <div class="col col-sm-6 arena">
             <Arena @opcion="getOpcion" :user-option="partida.usuario_1"></Arena>
         </div>
@@ -15,7 +27,7 @@
 
 <script lang="js">
 import Arena from '@/components/Game/Arena'
-import fireApp from '../../config/_firebase.js'
+import fireApp from '../config/_firebase.js'
 const partida = fireApp.firestore().collection('juego1')
 export default {
   name: 'partida',
@@ -23,13 +35,15 @@ export default {
     Arena
   },
   beforeRouteEnter (to, from, next) {
-    next( vm=> {
+    next(vm => {
       vm.$bind('partida', partida.doc(to.params.no_partida))
     })
   },
   data () {
-    partida: {}
-    partidas: []
+    return {
+      partida: {},
+      partidas: []
+    }
   },
   firestore: {
     partidas: fireApp.firestore().collection('juego1')
@@ -38,10 +52,10 @@ export default {
     '$route.params': {
       deep: true,
       immediate: true,
-      handler(value) {
+      handler (value) {
         this.$bind('partida', partida.doc(value.no_partida))
-      },
-    },
+      }
+    }
   },
   methods: {
     crearPartida () {
@@ -58,7 +72,7 @@ export default {
         })
     },
     getOpcion (opcion) {
-      fireApp.firestore().collection('juego1').doc(this.$route.params.no_partida).update ({
+      fireApp.firestore().collection('juego1').doc(this.$route.params.no_partida).update({
         'usuario': opcion
       })
     }
