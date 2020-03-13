@@ -12,7 +12,7 @@ npm --version<template>
 
             <button class="btn btn-dark btn-block col-10 mx-auto" @click="login">Registrarse</button>
 
-            <button class="btn btn-dark btn-block col-10 mx-auto" @click="juego">Registrarse</button>
+            <button class="btn btn-dark btn-block col-10 mx-auto" @click="juego">Jugar</button>
 
             <button class="btn  btn-block" @click="goToLogin">Ya tengo cuenta</button>
             <div clas="form-group">

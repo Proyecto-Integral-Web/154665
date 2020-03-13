@@ -40,5 +40,8 @@ export default {
       uCor: fireApp.user.email,
       uTel: fireApp.user.email
     }
+  },
+  getUser() {
+    return currentUser
   }
 }

@@ -15,7 +15,7 @@
           Nueva Partida
         </button>
         <div class="col col-sm-6 arena">
-            <Arena @opcion="getOpcion" :user-option="partida.usuario_1"></Arena>
+            <Arena @opcion="getOpcion" :displayName="this" :user-option="partida.usuario_1"></Arena>
         </div>
         <div class="col col-sm-6 arena">
 
@@ -29,6 +29,7 @@
 import Arena from '@/components/Game/Arena'
 import fireApp from '../config/_firebase.js'
 const partida = fireApp.firestore().collection('juego1')
+var usuarioE
 export default {
   name: 'partida',
   components: {
@@ -57,23 +58,37 @@ export default {
       }
     }
   },
+  mounted:(
+
+  )
   methods: {
     crearPartida () {
-      fireApp.firestore().collection('juego1').doc('partida-2').set({
-        'Usuario_1': '',
+      let user = Auth.getUser()
+      let uid = user.uid
+      fireApp.firestore().collection('juego1').add({
+        participantes: [uid]
+        names: [user.displaynames]
+        'Usuario_2': '',
         'Usuario_2': '',
         'ganador': ''
       })
+      usuarioE = 'Usuario_1'
     },
     obtenerPartida (partida) {
       fireApp.firestore().collection('juego1').doc(partida).then(
         (result) => {
           console.log(result)
+          fireApp.firestore().collection('juego1').doc('partida-2').get()
         })
+      usuarioE = 'Usuario_2'
     },
     getOpcion (opcion) {
+      let parti = []
+      parti = this.participantes
+      parti.idexOf(this.user.uid)
+      if(parti.idexOf(this.user.uid))
       fireApp.firestore().collection('juego1').doc(this.$route.params.no_partida).update({
-        'usuario': opcion
+        [usuarioE]: opcion
       })
     }
   }
@@ -84,4 +99,5 @@ export default {
 .arena{
     text-size-adjust: 72px;
 }
+// bpx
 </style>
