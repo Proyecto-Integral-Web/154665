@@ -41,7 +41,7 @@ export default {
       uTel: fireApp.user.email
     }
   },
-  getUser() {
-    return currentUser
+  getUser () {
+    return fireApp.auth().currentUser
   }
 }

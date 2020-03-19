@@ -20,7 +20,7 @@
 <script lang="js">
 export default {
   name: 'Arena',
-  props: ['userOpcion'],
+  props: ['userOpcion', 'displayName'],
   data () {
     return {
       options: {
