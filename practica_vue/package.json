@@ -7,7 +7,7 @@
     "build": "vue-cli-service build",
     "test:unit": "vue-cli-service test:unit",
     "lint": "vue-cli-service lint",
-    "deploy": "npm run build && firebasedeploy"
+    "deploy": "npm run build && firebase deploy --only hosting"
   },
   "dependencies": {
     "bootstrap": "^4.4.1",

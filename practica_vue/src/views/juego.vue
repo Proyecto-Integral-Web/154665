@@ -74,7 +74,7 @@ export default {
   methods: {
     crearPartida () {
       this.user = Auth.getUser()
-      let uid = user.uid
+      let uid = this.user.uid
       fireApp.firestore().collection('juego-1').add({
         participantes: [uid],
         names: [this.user.displayName == null ? 'Usuario 1' : this.user.displayName],
