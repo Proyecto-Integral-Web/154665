@@ -1,14 +1,14 @@
 npm --version<template>
     <section>
-        <div class="col-10 col-sm-6 mx-auto">
+        <div class="col-10 col-sm-6 mx-auto drkbcg">
             <h6>Llene el formulario de registro</h6>
-            <input type="text" class="form-control mb-2 col " placeholder="Username" v-model="user.nombre">
+            <input type="text" class="form-control mb-2 col " placeholder="Nombre de usuario" v-model="user.nombre">
 
             <input type="text" class="form-control mb-2 col " placeholder="Email" v-model="user.email">
 
-            <input type="password" class="form-control mb-2 col " placeholder="Password" v-model="user.password">
+            <input type="password" class="form-control mb-2 col " placeholder="Contraseña" v-model="user.password">
 
-            <input type="password" class="form-control mb-2 col " placeholder="Password" v-model="user.password2">
+            <input type="password" class="form-control mb-2 col " placeholder="Confirmar contraseña" v-model="user.password2">
 
             <button class="btn btn-dark btn-block col-10 mx-auto" @click="login">Registrarse</button>
 

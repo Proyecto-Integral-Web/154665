@@ -14,6 +14,9 @@
         >
           Nueva Partida
         </button>
+        <div>
+          <Partidas></Partidas>
+        </div>
         <div class="col col-sm-6 arena">
             <Arena @opcion="getOpcion" :displayName="this" :user-option="partida.usuario_1"></Arena>
             <button v-if="!partida.names[1]" class="btn btn-outline-primary" @click="retar">👾</button>
@@ -33,6 +36,7 @@
 
 <script lang="js">
 import Arena from '@/components/Game/Arena'
+// import Partidas from '@/components/Game/partidas'
 import fireApp from '../config/_firebase.js'
 import Auth from '@/config/auth'
 const partida = fireApp.firestore().collection('juego1')
@@ -129,6 +133,9 @@ export default {
 </script>
 
 <style lang="scss">
+.drkbcg{
+  background-color: grey;
+}
 .arena{
     text-size-adjust: 72px;
 }

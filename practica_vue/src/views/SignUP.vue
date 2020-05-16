@@ -1,6 +1,6 @@
 <template>
-  <div class="SignUP container">
-    <div class="card p-3">
+  <div class="SignUP_container">
+    <div class="card p-3 drkbcg">
       <h1>Crear cuenta</h1>
       <SupForm></SupForm>
     </div>
@@ -18,4 +18,7 @@ export default {
 </script>
 
 <style lang="scss">
+.SignUP_container{
+    background-color: grey;
+}
 </style>

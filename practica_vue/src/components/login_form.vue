@@ -7,9 +7,9 @@ npm --version<template>
               :message="error"
               :code="codigoError"
             </Alerts-Component>
-            <input type="text" class="form-control mb-2 col" placeholder="Username" v-model="user.email" @keypress="swError=false">
+            <input type="text" class="form-control mb-2 col" placeholder="Nombre de usuario" v-model="user.email" @keypress="swError=false">
 
-            <input type="password" class="form-control mb-2 col" placeholder="Password" v-model="user.password" @keypress="swError=false">
+            <input type="password" class="form-control mb-2 col" placeholder="Contraseña" v-model="user.password" @keypress="swError=false">
 
             <button class="btn btn-dark btn-block col-10 mx-auto" @click="login">Ingresar</button>
 
